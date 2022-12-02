@@ -1,0 +1,24 @@
+<ion-header >
+  <ion-toolbar color="">
+    <ion-buttons slot="start">
+      <ion-back-button color="secondary"> </ion-back-button>
+    </ion-buttons>
+    <ion-title>{{pageTitle | titlecase }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <img [src]="personaje.image" alt="{{personaje.name}}">
+    <ion-card-header>
+      <ion-card-subtitle>{{personaje.homeworld | titlecase}}</ion-card-subtitle>
+      <ion-card-title>{{personaje.name}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-text>
+        <p>{{personaje.Informacion}} <i><a href="{{personaje.Informacion}}" target="_blank"></a></i></p>
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
