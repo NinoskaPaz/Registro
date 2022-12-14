@@ -6,16 +6,14 @@ export const environment = {
   production: false,
   API_KEY:'1c1d887100adfa95cf60baabc069960b',
   API_URL:'https://api.openweathermap.org/data/2.5/',
-//nose si funciona la firebase debido a que nose si se conecto bien 
   firebase: {
-    apiKey: "AIzaSyCKsN-O0kLqqWiaOhFJWnml4QyBGZRJYso",
-    authDomain: "perosanas.firebaseapp.com",
-    projectId: "perosanas",
-    storageBucket: "perosanas.appspot.com",
-    messagingSenderId: "849708102570",
-    appId: "1:849708102570:web:86efb38f1e95d5ee4631d3",
-    measurementId: "G-XP4PJF4PPK"
-
+    projectId: 'registro-dde02',
+    appId: '1:885095255675:web:7fe41022d97a84f5525cde',
+    storageBucket: 'registro-dde02.appspot.com',
+    apiKey: 'AIzaSyAIBW3ujCKlRGcrAq0bLXhC_bJwmBHOGlE',
+    authDomain: 'registro-dde02.firebaseapp.com',
+    messagingSenderId: '885095255675',
+    measurementId: 'G-TKZ1SSFNCY',
   }
 };
 

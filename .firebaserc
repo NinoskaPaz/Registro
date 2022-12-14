@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "registro-dde02": {
+      "hosting": {
+        "app": [
+          "registro-dde02"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "registro-dde02"
+  }
+}
