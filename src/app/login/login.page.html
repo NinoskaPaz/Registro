@@ -8,29 +8,18 @@
 </ion-header>
 
 <ion-content>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Login</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <form [formGroup]="formularioLogin">
-        <ion-item>
-          <ion-label position="floating">Nombre</ion-label>
-          <ion-input formControlName="nombre"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="floating">Contraseña</ion-label>
-          <ion-input formControlName="password" type="password"></ion-input>
-        </ion-item>
-      </form>
-      <br>
-      <ion-button (click)="ingresar()" color="secondary">
-        Ingresar
-      </ion-button>
-      <ion-buttons slot="end" >
-        <ion-button [routerLink]="['/registro']">Registrarse</ion-button>
-      </ion-buttons>
-    </ion-card-content>
-  </ion-card>
+  <form (ngSubmit)="login()" [formGroup]="credentials">
+    <ion-item class="ion-margin-bottom">
+      <ion-input type="email" placeholder="Email" formControlName="email"></ion-input>
+      <ion-note slot="error" *ngIf="(email?.dirty || email?.touched) && email?.errors">Email No Valido</ion-note>
+    </ion-item>
+    <ion-item class="ion-margin-bottom">
+      <ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
+      <ion-note slot="error" *ngIf="(password?.dirty || password?.touched) && password?.errors">Debes ingresar al menos 6 caracteres. </ion-note>
+    </ion-item>
+
+    <ion-button expand="full" type="submit" [disabled]="!credentials.valid">Login</ion-button>
+   <!--ion-button expand="full" type="button" (click)="register()">Crear cuenta</ion-button-->
+  </form>
 </ion-content>
 

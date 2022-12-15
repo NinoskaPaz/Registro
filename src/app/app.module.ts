@@ -21,13 +21,15 @@ import { provideMessaging,getMessaging } from '@angular/fire/messaging';
 import { providePerformance,getPerformance } from '@angular/fire/performance';
 import { provideRemoteConfig,getRemoteConfig } from '@angular/fire/remote-config';
 import { provideStorage,getStorage } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/compat/firestore';
 
 registerLocaleData(localeES,'es');
 
 
 @NgModule({
   declarations: [AppComponent, FiltroPersonajesPipe],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule,
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule,AngularFireAuthModule,AngularFirestoreModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
     provideAnalytics(() => getAnalytics()),

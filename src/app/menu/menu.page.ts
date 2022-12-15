@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController, NavController } from '@ionic/angular';
+import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -34,7 +36,9 @@ export class MenuPage implements OnInit {
   ]
 
   constructor(public alertController: AlertController,
-    public navCtrl: NavController) { }
+    public navCtrl: NavController,
+    public authService: AuthService,
+    public router: Router ) { }
 
   ngOnInit() {
   }
@@ -56,14 +60,19 @@ export class MenuPage implements OnInit {
         }, {
           text: 'Si',
           handler: () => {
-            localStorage.removeItem('ingresado');
-            this.navCtrl.navigateRoot('login');
+           this.logout();
           }
         }
       ]
     });
 
     await alert.present();
+  }
+  async logout(){
+    await this.authService.logout();
+    this.router.navigateByUrl('/',{replaceUrl:true})
+
+
   }
 
 }

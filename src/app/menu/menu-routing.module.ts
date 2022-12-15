@@ -1,6 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { map } from 'rxjs/operators';
 import { MenuPage } from './menu.page';
+import { canActivate } from '@angular/fire/auth-guard';
+
+const uidAdmin = 'lZW7PHSeZhMw1IwWK15ZF7qU3sU2';
+const Profe = () => map( (user: any) => !!user && (user.uid === uidAdmin) );
 
 const routes: Routes = [
   {
@@ -14,6 +19,7 @@ const routes: Routes = [
   {
     path: 'personajes',
     loadChildren: () => import('../personajes/personajes.module').then( m => m.PersonajesPageModule),
+    ...canActivate(Profe)
   },
   {
     path: 'inicio',
