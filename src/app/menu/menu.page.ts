@@ -29,9 +29,9 @@ export class MenuPage implements OnInit {
       icono: 'scan'
     },
     {
-      titulo: 'error',
+      titulo: 'QR-Alumnos',
       url: '/menu/e404',
-      icono: 'close'
+      icono: 'scan'
     },
   ]
 
@@ -50,7 +50,7 @@ export class MenuPage implements OnInit {
   async salir(){
     const alert = await this.alertController.create({
       header: 'Salir',
-      message: '¿Estas seguro que quieres salir?',
+      message: '¿Estas seguro que desea salir?',
       buttons: [
         {
           text: 'No',
@@ -71,7 +71,6 @@ export class MenuPage implements OnInit {
   async logout(){
     await this.authService.logout();
     this.router.navigateByUrl('/',{replaceUrl:true})
-
 
   }
 
