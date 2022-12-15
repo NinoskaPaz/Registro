@@ -49,10 +49,10 @@ export class LoginPage implements OnInit {
     
     if(user){
       this.router.navigateByUrl('/menu/inicio',{replaceUrl:true});
-      this.alertPresent('Logeado!','Disfruta de nuestro sistema');
+      this.alertPresent('Bienvenido!','Disfrute del sistema');
     }
     else{
-      this.alertPresent('Login Fallido','Intentalo de nuevo');
+      this.alertPresent('Iniciar sesión incorrecta','Intentalo una vez más');
     }
   }
   async register(){
