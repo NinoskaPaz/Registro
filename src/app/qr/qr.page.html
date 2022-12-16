@@ -16,12 +16,12 @@
   <ion-card>
     <ion-card-content>
       <qrcode [qrdata]="qrCodeString" 
-      [width]="300" 
+      [width]="250" 
       [errorCorrectionLevel]="'M'"></qrcode>
     </ion-card-content>
   </ion-card>
 
-<ion-button
+<ion-button color="secundary"
   expand="block"
   class="ion-margin"
   (click)="startScan()">Scanear codigo QR
