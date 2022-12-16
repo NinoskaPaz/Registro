@@ -22,3 +22,4 @@ describe('QrPage', () => {
     expect(component).toBeTruthy();
   });
 });
+
