@@ -9,12 +9,28 @@
 </ion-header>
 
 
-<ion-content>
+<ion-content [style.visibility]="show" >
   <ion-card>
-     <ion-img src="../../../assets/img/qr.png" alt=""></ion-img>
-     <ion-card-content>
-       <ion-button (click)="scan()" shape="round" color="secondary" >QR</ion-button> 
-     </ion-card-content>
+    <ion-title>Codigo QR de asistencia</ion-title>
   </ion-card>
+  <ion-card>
+    <ion-card-content>
+      <qrcode [qrdata]="qrCodeString" 
+      [width]="300" 
+      [errorCorrectionLevel]="'M'"></qrcode>
+    </ion-card-content>
+  </ion-card>
+
+<ion-button
+  expand="block"
+  class="ion-margin"
+  (click)="startScan()">Scanear codigo QR
+</ion-button>
+
+<ion-item *ngIf="scannerResult" >
+  <ion-label
+  class="ion-text-wrap">
+Resultado de scanner: {{scannerResult}}</ion-label>
+</ion-item>
  </ion-content>
  
