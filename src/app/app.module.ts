@@ -12,7 +12,6 @@ import { Geolocation } from '@awesome-cordova-plugins/geolocation/ngx';
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
-import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
 import { provideAnalytics,getAnalytics,ScreenTrackingService,UserTrackingService } from '@angular/fire/analytics';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
@@ -23,6 +22,7 @@ import { provideRemoteConfig,getRemoteConfig } from '@angular/fire/remote-config
 import { provideStorage,getStorage } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { BarcodeScanner } from '@capacitor-community/barcode-scanner';
 
 registerLocaleData(localeES,'es');
 
@@ -41,7 +41,7 @@ registerLocaleData(localeES,'es');
     provideRemoteConfig(() => getRemoteConfig()),
     provideStorage(() => getStorage()),],
   providers: [
-    BarcodeScanner,
+    ,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     Geolocation,
     { provide: LOCALE_ID, useValue:'es-CL'},
