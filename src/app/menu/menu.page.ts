@@ -28,11 +28,6 @@ export class MenuPage implements OnInit {
       url: '/menu/QR',
       icono: 'scan'
     },
-    {
-      titulo: 'QR-Alumnos',
-      url: '/menu/e404',
-      icono: 'scan'
-    },
   ]
 
   constructor(public alertController: AlertController,
